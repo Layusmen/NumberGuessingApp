@@ -19,7 +19,7 @@ namespace numberguessing
             int guesses = 0;
 
             // Giving User Opportunity to make 5 guesses.
-            int highestGuesses = 5;
+            const int highestGuesses = 5;
 
             // Loop over the 5 guesses.
             for (int i = 0; i < highestGuesses; i++)
