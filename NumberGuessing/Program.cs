@@ -8,12 +8,15 @@ namespace numberguessing
             // Create a random number generator.
             Random rng = new Random();
 
+            //Constants for limit
+            const int upperlimit = 100;
+            const int lowerlimit = 1;
             // Generate a random number between 0 and 100.
-            int randomNumber = rng.Next(0, 100);
+            int randomNumber = rng.Next(lowerlimit, upperlimit);
 
             // Print the random number.
             //Console.WriteLine(randomNumber);
-            Console.WriteLine("App to guess a secret random number made between 0 and 100");
+            Console.WriteLine("App to guess a secret random number made between 1 and 100");
 
             // Initialize the number of guesses.
             int guesses = 0;
@@ -25,7 +28,7 @@ namespace numberguessing
             for (int i = 0; i < highestGuesses; i++)
             {
                 // user guess.
-                Console.WriteLine("Please put a number between 0 and 100");
+                Console.WriteLine("Please put a number between 1 and 100");
                 int numGuess = int.Parse(Console.ReadLine());
 
                 // Check if the guess is correct.
