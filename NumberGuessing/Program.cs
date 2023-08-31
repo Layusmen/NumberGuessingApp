@@ -27,7 +27,7 @@ namespace numberguessing
                 // user guess.
                 Console.WriteLine("Please put a number between 0 and 100");
                 int numGuess = int.Parse(Console.ReadLine());
-
+    
                 // Check if the guess is correct.
                 if (numGuess == randomNumber)
                 {
