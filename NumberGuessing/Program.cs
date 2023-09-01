@@ -12,13 +12,15 @@ namespace numberguessing
             const int HIGHEST_GUESSES = 5;
 
             //Constants for limit
-            const int UPPER_LIMIT = 100;
-            const int LOWER_LIMIT = 1;
+            const int UPPER_LIMIT = 101;
+            const int LOWER_LIMIT = 1
+
             // Generate a random number between 0 and 100.
             int randomNumber = rng.Next(LOWER_LIMIT, UPPER_LIMIT);
 
             // Print the random number.
             //Console.WriteLine(randomNumber);
+            
             Console.WriteLine("App to guess a secret random number made between {0} and {1}", LOWER_LIMIT, UPPER_LIMIT);
 
             // Initialize the number of guesses.
