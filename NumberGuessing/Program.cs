@@ -8,28 +8,31 @@ namespace numberguessing
             // Create a random number generator.
             Random rng = new Random();
 
+            //Giving User Opportunity to make 5 guesses.
+            const int HIGHEST_GUESSES = 5;
+
             //Constants for limit
-            const int upperlimit = 100;
-            const int lowerlimit = 1;
+            const int UPPER_LIMIT = 100;
+            const int LOWER_LIMIT = 1;
             // Generate a random number between 0 and 100.
-            int randomNumber = rng.Next(lowerlimit, upperlimit);
+            int randomNumber = rng.Next(LOWER_LIMIT, UPPER_LIMIT);
 
             // Print the random number.
             //Console.WriteLine(randomNumber);
-            Console.WriteLine("App to guess a secret random number made between 1 and 100");
+            Console.WriteLine("App to guess a secret random number made between {0} and {1}", LOWER_LIMIT, UPPER_LIMIT);
 
             // Initialize the number of guesses.
             int guesses = 0;
 
-            // Giving User Opportunity to make 5 guesses.
-            const int highestGuesses = 5;
-
             // Loop over the 5 guesses.
-            for (int i = 0; i < highestGuesses; i++)
+            for (int i = 0; i < HIGHEST_GUESSES; i++)
             {
                 // user guess.
-                Console.WriteLine("Please put a number between 1 and 100");
+                Console.WriteLine("Please put a number between {0} and {1}", LOWER_LIMIT, UPPER_LIMIT);
                 int numGuess = int.Parse(Console.ReadLine());
+
+                // Increment the number of guesses.
+                guesses++;
 
                 // Check if the guess is correct.
                 if (numGuess == randomNumber)
@@ -38,24 +41,24 @@ namespace numberguessing
                     Console.WriteLine("Congratulations! You guessed the number in {0} guesses.", guesses);
                     break;
                 }
-                else if (numGuess < randomNumber)
-                {
-                    // The guess is too low.
-                    Console.WriteLine("Too Low!. You have {0} guesses left.", highestGuesses - guesses);
-                }
-                else if (numGuess > randomNumber && numGuess <= randomNumber + 5)
+                else if (Math.Abs(numGuess - randomNumber) <= 5)
                 {
                     // The guess is close to the secret number.
                     Console.WriteLine("You are close to the secret number!");
                 }
+                else if (numGuess < randomNumber)
+                {
+                    // The guess is too low.
+                    Console.WriteLine("Too Low!. You have {0} guesses left.", HIGHEST_GUESSES - guesses);
+                }
                 else
                 {
                     // The guess is too high.
-                    Console.WriteLine("Too High!. You have {0} guesses left.", highestGuesses - guesses);
+                    Console.WriteLine("Too High!. You have {0} guesses left.", HIGHEST_GUESSES - guesses);
                 }
 
                 // If the user ran out of guesses, tell them they lost and print the Random number.
-                if (guesses == highestGuesses)
+                if (guesses == HIGHEST_GUESSES)
                 {
                     Console.WriteLine("You lost! The Random number was {0}.", randomNumber);
                 }
