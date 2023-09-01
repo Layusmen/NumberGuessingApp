@@ -56,12 +56,11 @@ namespace numberguessing
                     // The guess is too high.
                     Console.WriteLine("Too High!. You have {0} guesses left.", HIGHEST_GUESSES - guesses);
                 }
-
-                // If the user ran out of guesses, tell them they lost and print the Random number.
-                if (guesses == HIGHEST_GUESSES)
-                {
-                    Console.WriteLine("You lost! The Random number was {0}.", randomNumber);
-                }
+            }
+            // If the user ran out of guesses, tell them they lost and print the Random number.
+            if (guesses == HIGHEST_GUESSES)
+            {
+                Console.WriteLine("You lost! The Random number was {0}.", randomNumber);
             }
         }
     }
