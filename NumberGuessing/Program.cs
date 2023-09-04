@@ -21,9 +21,6 @@ namespace numberguessing
             // Generate a random number between 0 and 100.
             int randomNumber = rng.Next(LOWER_LIMIT, UPPER_LIMIT+1);
 
-            // Print the random number.
-            //Console.WriteLine(randomNumber);
-
             Console.WriteLine("App to guess a secret random number made between {0} and {1}", LOWER_LIMIT, UPPER_LIMIT);
 
             // Initialize the number of guesses.
